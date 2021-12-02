@@ -36,6 +36,7 @@ cordova plugin add 文件路径
 
 3. successCallback: 成功回调
 4. errorCallback: 失败回调
+5. successCallback(res)的入参 res: `{valid:boolean|1|0}`
 
 ## 使用方法
 
@@ -55,6 +56,8 @@ declare const VerityApkSignature;
     return new Promise((resolve, reject) => {
       VerityApkSignature.verityApkSignature(packageName, apkPath, (res) => {
         resolve(res)
+        // android res:{valid:true}
+        // ios: {valid: 1}
       }, (e) => {
         reject(e)
       })
