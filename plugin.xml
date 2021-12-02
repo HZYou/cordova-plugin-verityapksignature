@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-verityapksignature" 
+        version="0.0.3" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>VerityApkSignature</name>
+
+    <description>安卓验证下载apk的签名/iOS验证bundleId</description>
+
+    <repo>https://github.com/HZYou/cordova-plugin-verityapksignature.git</repo>
+
+    <keywords>Cordova, Verity Signature, BundleID</keywords>
+
+    <author>hzy</author>
+
+    <js-module name="VerityApkSignature" src="www/VerityApkSignature.js">
+        <clobbers target="VerityApkSignature"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="VerityApkSignature">
+                <param name="android-package" value="com.hzy.cordova.verityapksignature.VerityApkSignature"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.GET_TASKS"/>
+        </config-file>
+        <source-file src="src/android/VerityApkSignature.java"
+                     target-dir="src/com/hzy/cordova/verityapksignature"/>
+    </platform>
+    <!-- ios -->
+    <platform name="ios">
+
+        <config-file parent="/*" target="config.xml">
+            <feature name="VerityApkSignature">
+                <param name="ios-package" value="VerityApkSignature" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/VerityApkSignature.h" />
+        <source-file src="src/ios/VerityApkSignature.m" />
+        
+    </platform>
+</plugin>

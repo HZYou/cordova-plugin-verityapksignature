@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-verityapksignature",
+  "version": "0.0.3",
+  "description": "Android验证apk签名;iOS重签名检测",
+  "cordova": {
+    "id": "cordova-plugin-verityapksignature",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": "https://github.com/HZYou/cordova-plugin-verityapksignature.git",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "Verity Signature",
+    "Verity BundleID"
+  ],
+  "author": "hzy",
+  "license": "ISC"
+}
