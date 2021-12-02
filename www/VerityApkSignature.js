@@ -7,4 +7,7 @@ module.exports = {
       apkPath,
     ]);
   },
+  isProxy: function (successCallback, errorCallback) {
+    exec(successCallback, errorCallback, "VerityApkSignature", "isProxy");
+  },
 };

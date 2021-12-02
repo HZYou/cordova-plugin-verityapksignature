@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-verityapksignature",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Android验证apk签名;iOS重签名检测",
   "cordova": {
     "id": "cordova-plugin-verityapksignature",

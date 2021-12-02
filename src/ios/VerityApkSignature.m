@@ -20,6 +20,19 @@
 
 }
 
+- (void)isProxy:(CDVInvokedUrlCommand*)command
+{
+    
+    BOOL proxyRes = [self getProxyStatus];
+    NSDictionary* checkResult = @{
+      @"isProxy":@(proxyRes?true:false)
+    };
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:proxyRes];
+
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
+}
+
 - (BOOL)checkCodeSignWithProvisionID:(NSString *)provisionID
 {
     // 描述文件路径
@@ -75,6 +88,27 @@
     }
     return YES;
     
+}
+
+
+
+-(BOOL)getProxyStatus {
+    NSDictionary *proxySettings = (__bridge NSDictionary
+                                   *)(CFNetworkCopySystemProxySettings());
+    NSArray *proxies = (__bridge NSArray
+                        *)(CFNetworkCopyProxiesForURL((__bridge CFURLRef
+                                                       _Nonnull)([NSURL
+                                                                  URLWithString:@"https://www.baidu.com"]), (__bridge
+                                                                                                             CFDictionaryRef _Nonnull)(proxySettings)));
+    NSDictionary *settings =proxies.count?[proxies
+                                           objectAtIndex:0]:nil;
+    if ([@"kCFProxyTypeNone" isEqualToString:[settings
+                                              objectForKey:(NSString *)kCFProxyTypeKey]]){
+        //没有设置代理
+        return NO;
+    }
+    //设置了代理
+    return YES;
 }
 
 @end
