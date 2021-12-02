@@ -1,6 +1,7 @@
 # cordova-plugin-verityapksignature
 
-下载 apk 安装包后验证其签名的 Cordova 插件
+Android 下载 apk 安装包后验证其签名的 Cordova 插件
+iOS 验证 bundleId 是否被篡改
 
 ## 支持平台
 
