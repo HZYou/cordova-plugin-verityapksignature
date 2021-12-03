@@ -1,7 +1,6 @@
 # cordova-plugin-verityapksignature
 
-Android 下载 apk 安装包后验证其签名的 Cordova 插件
-iOS 验证 bundleId 是否被篡改
+安全修复的 Cordova 插件，包含的功能有：1. Android 下载 apk 安装包后验证其签名; 2. iOS 验证 bundleId 是否被篡改; 3. 检测 iOS 网络代理
 
 ## 支持平台
 
@@ -91,6 +90,7 @@ declare const VerityApkSignature;
 isProxyIos(){
   return new Promise((resolve, reject) => {
     VerityApkSignature.isProxy(res => resolve(res), e =>reject(e))
+    // res: {isProxy: 1} or {isProxy: 0}
   })
 }
 ```

@@ -27,7 +27,7 @@
     NSDictionary* checkResult = @{
       @"isProxy":@(proxyRes?true:false)
     };
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:proxyRes];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:checkResult];
 
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 
