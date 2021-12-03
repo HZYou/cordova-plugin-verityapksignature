@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-verityapksignature" 
-        version="0.0.4" 
+        version="0.0.5" 
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <name>VerityApkSignature</name>
 
-    <description>安卓验证下载apk的签名/iOS验证bundleId/iOS检测网络代理</description>
+    <description>安全漏洞修复插件:安卓验证下载apk的签名/iOS验证bundleId/iOS检测网络代理</description>
 
     <repo>https://github.com/HZYou/cordova-plugin-verityapksignature.git</repo>
 
